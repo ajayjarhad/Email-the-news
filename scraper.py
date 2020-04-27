@@ -10,6 +10,7 @@ class Scraper:
         self.markup = requests.get('https://news.ycombinator.com/').text
         self.keywords = keywords
 
+
     def parse(self):
         soup = BeautifulSoup(self.markup, 'html.parser')
         links = soup.findAll("a",{"class": "storylink"})
